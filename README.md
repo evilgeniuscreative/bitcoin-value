@@ -1,4 +1,3 @@
-## SEIR1130 April 21, 2021
 
 # React Router/Bitcoin price checker 
 
