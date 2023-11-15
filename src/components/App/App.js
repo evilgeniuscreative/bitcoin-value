@@ -16,7 +16,7 @@ function App() {
         <div id='navLinks'>
           <Link to='/'>Home</Link>
           <Link to='/currencies'>All Currencies</Link>
-          <Link to='/price/usd'>Price in USD</Link>
+          <Link to='/price/USD'>Price in USD</Link>
         </div>
       </nav>
       <main>
