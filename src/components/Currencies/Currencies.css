@@ -1,8 +1,30 @@
-.currency p {
-  font-size: 24px;
+.currencies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3%;
+  justify-content: space-between;
+}
+.currency {
+  align-self: stretch;
+  background-color: #efefef;
+  border-radius: 10px;
+  color: black;
+  flex-basis: 30%;
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
-.currency a {
-  font-weight: bold;
+.currency:hover {
+  background-color: #ddd;
+  transition: all 0.3s;
+}
+
+.currency span {
   color: green;
+  font-weight: bold;
 }

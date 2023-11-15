@@ -1,32 +1,32 @@
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./Price.css";
 
-const coindeskURL = "https://api.coindesk.com/v1/bpi/currentprice/";
+//https://coinmarketcap.com/api/
+const coindeskURL = "https://api.coindesk.com/v1/bpi/currentprice";
 
-const Price = ({ match, price, setPrice }) => {
-
+const Price = ({ price, setPrice }) => {
+  const { currency } = useParams();
   useEffect(() => {
-    const currency = match.params.currency;
-    const url = `${coindeskURL}${currency}.json`;
+    const url = `${coindeskURL}/${currency}.json`;
 
     fetch(url)
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         let newPrice = res.bpi[currency].rate;
         setPrice(newPrice);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
-  }, [])
+  }, [currency, setPrice]);
 
-
-    return (
-      <div>
-        <h1>Bitcoin price in {match.params.currency}</h1>
-        <div className="price">{price}</div>
-      </div>
-    );
-}
+  return (
+    <div>
+      <h1>Bitcoin price in {currency}</h1>
+      <div className='price'>{price}</div>
+    </div>
+  );
+};
 
 export default Price;
